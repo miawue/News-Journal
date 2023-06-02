@@ -8,7 +8,17 @@ export function buildLoaders(): webpack.RuleSetRule[] {
     exclude: /node-modules/,
   }
 
+  const stylesLoader = {
+    test: /\.s[ac]ss$/i,
+    use: [
+      "style-loader",
+      "css-loader",
+      "sass-loader"
+    ]
+  }
+
   return [
     typescritptLoader,
+    stylesLoader
   ]
 }
